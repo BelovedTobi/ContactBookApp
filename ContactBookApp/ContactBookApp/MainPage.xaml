@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ContactBookApp"
+             x:Class="ContactBookApp.MainPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="Add Contact"  Clicked="AddContactClicked"/>
+    </ContentPage.ToolbarItems>
+
+    <ActivityIndicator x:Name="Loader" IsRunning="true" IsVisible="true"/>
+    <ListView x:Name="MainList" ItemSelected="Handle_ItemSelected" IsPullToRefreshEnabled="true" Refreshing="Handle_Refreshing"
+              SeparatorColor="Red" SeparatorVisibility="Default"  HasUnevenRows="true">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <ViewCell.ContextActions>
+                        <MenuItem Text="Delete Contact" Clicked="Handle_Clicked" IsDestructive="true"/>
+                        <MenuItem Text="Add Contact" Clicked="AddContactClicked"/>
+                        <MenuItem Text="Edit Contact" Clicked="EditContact_Clicked" />
+                        <MenuItem Text="New Contact" Clicked="AddContactClicked"/>
+                    </ViewCell.ContextActions>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Margin="5" WidthRequest="50"
+                               HeightRequest="50" Source="{Binding getImageSource}" />
+                        <StackLayout Grid.Column="1">
+                            <Label Text="{Binding Name}" Font="15" FontAttributes="Bold" />
+                            <Label Text="{Binding Phone}" />
+                            <Label Text="{Binding Email}" Margin="2"/>
+                        </StackLayout>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>
+    
+    
+    
+    <!--<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ContactBookApp"
+             x:Class="ContactBookApp.MainPage">
+
+	<Label Text="Welcome to Xamarin.Forms!" 
+           VerticalOptions="Center" 
+           HorizontalOptions="Center" />
+
+</ContentPage>-->

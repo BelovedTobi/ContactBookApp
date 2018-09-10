@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Add New Contact"
+             x:Class="ContactBookApp.NewContactPage">
+    <ScrollView>
+        <StackLayout>
+            <!--<Label Text="Name"/>-->
+            <Entry x:Name="NameEntry" Placeholder="Enter name..."/>
+            <!--<Label Text="Phone"/>-->
+            <Entry x:Name="PhoneEntry" Placeholder="Enter Phone No..."/>
+            <!--<Label Text="Email"/>-->
+            <Entry x:Name="EmailEntry" Placeholder="Enter Email..."/>
+            <!--<Label Text="Image"/>-->
+            <Entry x:Name="ImageEntry" Placeholder="Enter Image name..." IsEnabled="False"/>
+            <Label x:Name="lblImage"/>
+
+            <Image x:Name="FileImagePreview" VerticalOptions="Center" HorizontalOptions="Center" />
+
+            <Button x:Name="btnImagePicker" Text="Select Image" Clicked="btnImagePicker_Clicked" VerticalOptions="Center" HorizontalOptions="Center" />
+
+            <Button Text="Add Contact" Clicked="Handle_Clicked"/>
+
+            <!--<Picker Title="Select Image" TextColor="Azure" />-->
+        </StackLayout>
+    </ScrollView>
+    
+   
+</ContentPage>
+
+
+<!--<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ContactBookApp.NewContactPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>-->

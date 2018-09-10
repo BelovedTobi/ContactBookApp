@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ContactBookApp.EditContactPage">
+    <ContentPage.Content>
+        <ScrollView>
+
+            <StackLayout>
+                <!--<Label Text="Name"/>-->
+                <Entry x:Name="NameEntry" Text="{Binding Name}" Placeholder="Enter name..."/>
+                <!--<Label Text="Phone"/>-->
+                <Entry x:Name="PhoneEntry" Text="{Binding Phone}" Placeholder="Enter Phone No..."/>
+                <!--<Label Text="Email"/>-->
+                <Entry x:Name="EmailEntry" Text="{Binding Email}" Placeholder="Enter Email..."/>
+                <!--<Label Text="Image"/>-->
+                <Entry x:Name="ImageEntry" Text="{Binding ImagePath}" IsEnabled="False" Placeholder="Enter Image name..."/>
+
+                <Image x:Name="FileImagePreview" VerticalOptions="Center" HorizontalOptions="Center" />
+
+                <Button x:Name="btnImagePicker" Text="Select Image" Clicked="btnImagePicker_Clicked" VerticalOptions="Center" HorizontalOptions="Center" />
+
+                <Entry x:Name="IdEntry" Text="{Binding Id}" IsVisible="False" Placeholder="Enter Image name..."/>
+
+                <Button Text="Edit Contact" Clicked="HandleEdit_Clicked"/>
+            </StackLayout>
+
+        </ScrollView>
+        
+    </ContentPage.Content>
+</ContentPage>

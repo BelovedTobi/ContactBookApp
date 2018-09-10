@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ContactBookApp.ContactDetailPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout>
+                    <Image Margin="50" WidthRequest="200" HeightRequest="200" Source="{Binding getImageSource}"/>
+                    <Label Text="{Binding Name}" Font="30" FontAttributes="Bold" Margin="5" HorizontalOptions="Center"/>
+                    <Label Text="{Binding Phone}" Font="15" Margin="5" HorizontalOptions="Center"/>
+                    <Label Text="{Binding Email}" Font="15" Margin="5" HorizontalOptions="Center"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>            
+    </ContentPage.Content>
+</ContentPage>
